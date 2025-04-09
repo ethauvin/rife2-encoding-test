@@ -5,7 +5,6 @@ import rife.validation.MetaData;
 
 public class ExampleBean extends MetaData {
 
-    private String rawText;
     private String text;
 
     @Override
@@ -17,21 +16,20 @@ public class ExampleBean extends MetaData {
         // Default constructor
     }
 
-    public ExampleBean(String rawText, String text) {
-        this.rawText = rawText;
-        this.text = text;
+    public ExampleBean(String s) {
+        this.text = s;
     }
 
     public String getRawText() {
-        return rawText;
-    }
-
-    public void setRawText(String rawText) {
-        this.rawText = rawText;
+        return text;
     }
 
     public String getText() {
         return text;
+    }
+
+    public void setRawText(String text) {
+        this.text = text;
     }
 
     public void setText(String text) {
@@ -41,8 +39,7 @@ public class ExampleBean extends MetaData {
     @Override
     public String toString() {
         return "ExampleBean{" +
-               "rawText='" + rawText + '\'' +
-               ", text='" + text + '\'' +
+               "text='" + text + '\'' +
                '}';
     }
 }

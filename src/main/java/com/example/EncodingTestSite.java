@@ -5,9 +5,14 @@ import rife.engine.*;
 public class EncodingTestSite extends Site {
     public void setup() {
         var hello = get("/hello", c -> {
+            var smiley = "\uD83D\uDE04";
             var t = c.template("hello");
-            var b = new ExampleBean("\uD83D\uDE04", "\uD83D\uDE04");
+            var b = new ExampleBean(smiley);
             t.setBean(b);
+            t.setValue("smiley", smiley);
+
+            t.setValue("title", "Encoding Test");
+
             c.print(t);
         });
         get("/", c -> c.redirect(hello));
