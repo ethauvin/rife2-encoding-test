@@ -16,8 +16,8 @@ public class ExampleBean extends MetaData {
         // Default constructor
     }
 
-    public ExampleBean(String s) {
-        this.text = s;
+    public ExampleBean(String text) {
+        this.text = text;
     }
 
     public String getRawText() {
